@@ -1,0 +1,20 @@
+<!-- src/app/views/user/user-list.component.html -->
+<h2>User List</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{ user.id }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td>
+      <a [routerLink]="['/user/edit', user.id]">Edit</a>
+      <button (click)="">Delete</button>
+    </td>
+  </tr>
+</table>
+<a [routerLink]="['/user/create']">Create New User</a>
