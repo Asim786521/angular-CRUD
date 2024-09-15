@@ -5,3 +5,11 @@ export interface User {
     email: string;
   }
   
+
+  export type getUser={
+ userId: number,
+  id: number,
+  title:string,
+  completed: boolean
+}
+  

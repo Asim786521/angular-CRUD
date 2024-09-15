@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { UserService } from '../../services/user.service';
-import { User } from '../../model/user.model';
+import { getUser, User } from '../../model/user.model';
 
 @Component({
   selector: 'app-user-list',
@@ -14,7 +14,7 @@ import { User } from '../../model/user.model';
   // styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  users: User[] = [];
+  users: getUser[] = [];
 
   constructor(private userService: UserService) {}  
 
