@@ -13,7 +13,7 @@
     <td>{{ user.email }}</td>
     <td>
       <a [routerLink]="['/user/edit', user.id]">Edit</a>
-      <button (click)="">Delete</button>
+      <button (click)="deleteUser(user.id)">Delete</button>
     </td>
   </tr>
 </table>
