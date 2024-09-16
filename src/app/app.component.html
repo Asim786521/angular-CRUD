@@ -185,13 +185,16 @@
   <div class="content" ng-controller="">
     <div class="left-side">
       <p>CRUD Angular JS</p>
-      <!-- <app-user-list></app-user-list> -->
+     
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <app-user-create *ngIf="isCreateRoute"></app-user-create>
       <app-user-update *ngIf="!isCreateRoute"></app-user-update>
     </div>
+  </div>
+  <div class="user-lsit">
+    <app-user-list></app-user-list>
   </div>
 </main>
 

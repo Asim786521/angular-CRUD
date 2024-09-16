@@ -7,7 +7,7 @@ import { getUser, User } from "../model/user.model";
   providedIn: "root",
 })
 export class UserService {
-  private apiUrl = "https://jsonplaceholder.typicode.com/todos"; // Replace with your API endpoint
+private apiUrl = "https://jsonplaceholder.typicode.com/todos"; // Replace with your API endpoint
 
   constructor(private http: HttpClient) {}
 
@@ -15,15 +15,15 @@ export class UserService {
     return this.http.get<getUser[]>(this.apiUrl);
   }
 
-  getUser(id: number): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${id}`);
+  getUser(id: number): Observable<getUser> {
+    return this.http.get<getUser>(`${this.apiUrl}/${id}`);
   }
 
   createUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiUrl, user);
   }
 
-  updateUser(id: number, user: User): Observable<User> {
+  updateUser(id: number, user: getUser): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${id}`, user);
   }
 

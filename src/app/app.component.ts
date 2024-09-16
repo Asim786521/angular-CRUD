@@ -4,13 +4,13 @@ import { HeaderComponent } from './components/header/header.component'; // Adjus
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserUpdateComponent } from './user/user-update/user-update.component';
 import { CommonModule } from '@angular/common';
-// import { UserListComponent } from './user/user-list/user.list.component';
+import { UserListComponent } from './user/user-list/user.list.component';
  
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent,UserCreateComponent,UserUpdateComponent,CommonModule], 
+  imports: [ HeaderComponent,UserListComponent,UserCreateComponent,UserUpdateComponent,CommonModule], 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

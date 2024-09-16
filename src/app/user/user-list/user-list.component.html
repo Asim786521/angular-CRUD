@@ -3,17 +3,18 @@
 <table>
   <tr>
     <th>ID</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Actions</th>
+    <th>userID</th>
+    <th>title</th>
+  
   </tr>
-  <tr *ngFor="let user of users">
-    <td>{{ user.id }}</td>
-    <td>{{ user.name }}</td>
-    <td>{{ user.email }}</td>
+  <tr >
+    <td>{{user?.id }}</td>
+    <td>{{user?.userId }}</td>
+   <td>{{ user?.title }}</td> 
+    <!-- <td>{{ user.email }}</td> --> 
     <td>
       <a [routerLink]="['/user/edit', user.id]">Edit</a>
-      <button (click)="deleteUser(user.id)">Delete</button>
+      <button (click)="deleteUser(user?.id)">Delete</button>
     </td>
   </tr>
 </table>
