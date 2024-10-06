@@ -2,12 +2,12 @@
 <h2>Update User</h2>
 
 <form  (ngSubmit)="updateUser()">
-  <label for="userID">UserID:</label>
+  <label for="userID">ID:</label>
   <input
     id="userID"
     name="userId"
     type="number"
-    [ngModel]="user?.userId"
+    [ngModel]="user?.id"
     (ngModelChange)="user.userId=$event"
     required
   />
@@ -17,10 +17,13 @@
     id="title"
     name="title"
     type="text"
-    [(ngModel)]="user.title"
+    [ngModel]="user?.title"
   
     required
   />
+  <button type="submit">Update</button>
+ 
+  <app-user-list></app-user-list>
 
-  <button type="submit">Update</button> <!-- Use type="submit" if using (ngSubmit) -->
+ <!-- Use type="submit" if using (ngSubmit) -->
 </form>

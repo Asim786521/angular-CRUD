@@ -4,12 +4,13 @@ import { UserService } from '../../services/user.service';
 import { getUser, User } from '../../model/user.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { UserListComponent } from '../user-list/user.list.component';
  
 
 @Component({
   selector: 'app-user-update',
   standalone:true,
-  imports: [CommonModule, RouterModule,FormsModule],  
+  imports: [CommonModule, RouterModule,FormsModule,UserListComponent],  
   templateUrl: './user-update.component.html',
 //   styleUrls: ['./user-update.component.css']
 })
@@ -22,11 +23,16 @@ export class UserUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.userService.getUser(1).subscribe((data: getUser) => {
-      this.user = data;
-   
+    // Subscribe to route parameters
+    this.route.paramMap.subscribe(params => {
+      const id = Number(params.get('id'));
       
+      // Fetch user data only if id is defined
+      if (id !== undefined) {
+        this.userService.getUser(id).subscribe((data: getUser) => {
+          this.user = data;
+        });
+      }
     });
   }
 

@@ -2,9 +2,15 @@
   <nav>
     <h2>{{username}}</h2>
     <ul>
-      <li><a href="/">Home </a></li>
-      <li active><a  href="/user/create">Create</a></li>
-      <li><a href="/user/edit/:id">Update</a></li>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/user/create">Create</a></li>
+      <li>
+        <a [routerLink]="['/user/edit', 1]">Update</a> <!-- Bind userId dynamically -->
+      </li>
+      <li *ngIf="!isCreateRoute">
+        <a routerLink="/user">User List</a>
+      </li>
     </ul>
   </nav>
 </header>
+
